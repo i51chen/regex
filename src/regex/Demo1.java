@@ -48,15 +48,22 @@ public class Demo1 {
 //        } else {
 //            System.out.println("NO MATCH");
 //        }
-        String str = "\\n";
-        String regex = "\\s";
+        String str = "\t";
+        String regex = "\\s"; //\r  \n
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
-        boolean flag = matcher.matches();
 //        boolean flag = pattern.matches(regex,str);
-        System.out.println(flag);
-        System.out.println(str);
-        System.out.println(pattern.pattern());
+//        boolean flag = matcher.matches();
+//        System.out.println(flag);
+//        System.out.println(str);
+//        System.out.println(pattern.pattern());
 
+        boolean findFlag = matcher.find();
+        System.out.println("result: " + findFlag);
+        System.out.println("str:    " + str);
+        System.out.println("regex:  " + pattern.pattern());
+        if (findFlag) {
+            System.out.println(matcher.group());
+        }
     }
 }
