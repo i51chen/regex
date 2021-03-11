@@ -48,8 +48,8 @@ public class Demo1 {
 //        } else {
 //            System.out.println("NO MATCH");
 //        }
-        String str = "\t";
-        String regex = "\\s"; //\r  \n
+        String str = "abac";
+        String regex = "a?"; // 空格 \r \t  \n
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
 //        boolean flag = pattern.matches(regex,str);
@@ -58,12 +58,13 @@ public class Demo1 {
 //        System.out.println(str);
 //        System.out.println(pattern.pattern());
 
-        boolean findFlag = matcher.find();
-        System.out.println("result: " + findFlag);
+//        boolean findFlag = matcher.find();
+//        System.out.println("result: " + findFlag);
         System.out.println("str:    " + str);
         System.out.println("regex:  " + pattern.pattern());
-        if (findFlag) {
-            System.out.println(matcher.group());
+        while (matcher.find()) {
+            System.out.println(matcher.group() + "定位：" +
+                    matcher.start() + "," + matcher.end());
         }
     }
 }
