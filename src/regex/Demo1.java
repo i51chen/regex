@@ -1,5 +1,6 @@
 package regex;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,8 +49,9 @@ public class Demo1 {
 //        } else {
 //            System.out.println("NO MATCH");
 //        }
-        String str = "abac";
-        String regex = "a?"; // 空格 \r \t  \n
+        String str = "aaaa,a";
+        char[] chars = str.toCharArray();
+        String regex = "a+"; // 空格 \r \t  \n
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
 //        boolean flag = pattern.matches(regex,str);
@@ -61,9 +63,10 @@ public class Demo1 {
 //        boolean findFlag = matcher.find();
 //        System.out.println("result: " + findFlag);
         System.out.println("str:    " + str);
+        System.out.println(Arrays.toString(chars));
         System.out.println("regex:  " + pattern.pattern());
         while (matcher.find()) {
-            System.out.println(matcher.group() + "定位：" +
+            System.out.println(matcher.group() +"\t"+ "定位：" +
                     matcher.start() + "," + matcher.end());
         }
     }
