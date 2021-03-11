@@ -64,6 +64,7 @@ public class Demo1 {
 //        System.out.println("result: " + findFlag);
         System.out.println("str:    " + str);
         System.out.println(Arrays.toString(chars));
+
         System.out.println("regex:  " + pattern.pattern());
         while (matcher.find()) {
             System.out.println(matcher.group() +"\t"+ "定位：" +
