@@ -49,9 +49,9 @@ public class Demo1 {
 //        } else {
 //            System.out.println("NO MATCH");
 //        }
-        String str = "aaaa,a";
+        String str = "aaaa";
         char[] chars = str.toCharArray();
-        String regex = "a+"; // 空格 \r \t  \n
+        String regex = "a{3,4}"; // 空格 \r \t  \n
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
 //        boolean flag = pattern.matches(regex,str);
